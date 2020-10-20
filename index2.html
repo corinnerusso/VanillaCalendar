@@ -1,0 +1,70 @@
+<html>
+    <head>
+        <title>Teranga2</title>
+        <meta charset="utf-8">
+        <meta name="viewport"
+          content="width=device-width, initial-scale=1, user-scalable=no">
+          <link rel="stylesheet" href="style.css" />
+          <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    
+    <body>
+        <label for="deliveryDate">Délivrance</label>
+        du <p id="target"></p> au <p id="target2"></p> soit 
+        <div ><label >Nombre de jours:</label><input type="text" id="numdays" /></div> 
+        <input type="text" onclick="showHide()"></input>
+        <div id="calendar">
+
+            <input type="date" name="" id="startDate" onchange="cal()">
+            -
+            <input type="date" name="" id="endDate" onchange="cal()">
+        </div>
+
+        
+
+
+    </body>
+
+    <script>
+
+ function showHide() {
+    var x = document.getElementById('calendar');
+    if (x.style.display === 'none') {
+        x.style.display = 'block';
+    } else {
+        x.style.display = 'none';
+    }
+}
+
+function getDays(){
+    let begin = new Date(document.getElementById("startDate").value);
+    let finish = new Date(document.getElementById("endDate").value);
+
+return parseInt((finish-begin)/(24*3600*1000));
+
+
+}
+
+function cal(){
+    if(document.getElementById("endDate")){
+        document.getElementById("numdays").value=getDays();
+    }
+}
+
+    </script>
+
+<script>
+    $(document).ready(function() {
+		$('input[id="startDate"]').change(function() {
+				/* on change get value then print to page */
+				var outputDate = (this.value);
+				$("#target").text(outputDate);
+        });
+        $('input[id="endDate"]').change(function() {
+				/* on change get value then print to page */
+				var outputDate = (this.value);
+				$("#target2").text(outputDate);
+		});
+});
+</script>
+
+</html>
