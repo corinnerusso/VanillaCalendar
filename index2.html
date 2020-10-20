@@ -10,13 +10,19 @@
     <body>
         <label for="deliveryDate">Délivrance</label>
         du <p id="target"></p> au <p id="target2"></p> soit 
-        <div ><label >Nombre de jours:</label><input type="text" id="numdays" /></div> 
+        <div ><label >Nombre de jours:</label><input type="text" id="numdays" onchange="setDate()"/></div> 
         <input type="text" onclick="showHide()"></input>
         <div id="calendar">
 
-            <input type="date" name="" id="startDate" onchange="cal()">
+            <input type="date" id="startDate" onchange="cal()">
             -
-            <input type="date" name="" id="endDate" onchange="cal()">
+            <input type="date" id="endDate" onchange="cal()">
+            <p>
+                <input type="button" onclick="setDate()" value="Fill Follow Date" />
+            </p>
+            
+           
+          
         </div>
 
         
