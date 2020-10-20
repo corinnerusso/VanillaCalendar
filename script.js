@@ -1,5 +1,3 @@
-
-
 function showHide() {
    var x = document.getElementById('calendar');
    if (x.style.display === 'none') {
@@ -24,7 +22,20 @@ function cal(){
    }
 }
 
+function setDate(){
+let theDate = new Date(document.getElementById("startDate").value);
+let delay= (document.getElementById("numdays").value);
+let newdelay=parseInt((delay)/(24*3600*1000));
 
+let myNewDate = new Date(theDate);
+
+let finalDate=myNewDate.setDate(myNewDate.getDate() + newdelay);
+
+let dateObject = new Date(finalDate);
+let convertDate=dateObject.toISOString().substr(0,10);
+document.getElementById("endDate").value=convertDate;
+
+}
 
 
    $(document).ready(function() {
