@@ -1,6 +1,12 @@
  //Delivery sentence
-document.getElementById("target").textContent=document.getElementById("startDate").value;
-document.getElementById("target2").textContent=document.getElementById("endDate").value;
+let initDate=new Date(document.getElementById("startDate").value);
+let fromDate = initDate.toLocaleDateString();
+document.getElementById("target").textContent=fromDate;
+
+let endingDate= new Date(document.getElementById("endDate").value);
+let untilDate = endingDate.toLocaleDateString();
+document.getElementById("target2").textContent= untilDate;
+
 document.getElementById("target3").textContent=document.getElementById("numdays").value;
 
  
@@ -11,14 +17,14 @@ document.getElementById("target3").textContent=document.getElementById("numdays"
  
 
  //Show or hide calendar modal
-function showHide() {
-   var x = document.getElementById('calendar');
-   if (x.style.display === 'none') {
-       x.style.display = 'block';
-   } else {
-       x.style.display = 'none';
-   }
-}
+// function showHide() {
+//    var x = document.getElementById('calendar');
+//    if (x.style.display === 'none') {
+//        x.style.display = 'block';
+//    } else {
+//        x.style.display = 'none';
+//    }
+// }
 
 
 //Calculate num of days between 2 dates

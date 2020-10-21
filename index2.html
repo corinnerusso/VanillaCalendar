@@ -1,44 +1,62 @@
 <html>
-    <head>
-        <title>Teranga2</title>
-        <meta charset="utf-8">
-        <meta name="viewport"
-          content="width=device-width, initial-scale=1, user-scalable=no">
-          <link rel="stylesheet" href="style.css" />
-          <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-          <script src="script.js" async></script>
-       
-          
-    <body>
-        <label for="deliveryDate">Délivrance</label>
-        du <p id="target"></p> au <p id="target2"></p> soit<p id="target3"></p> jours
-        <div ><label >Nombre de jours:</label><input type="number" id="numdays" onchange="setDate()"/></div> 
-        <input type="text" onclick="showHide()"></input>
-        <div id="calendar">
 
-            <input type="date" id="startDate" onchange="cal()">
-            -
-            <input type="date" id="endDate" onchange="cal()">
-            <!-- <p>
-                <input type="button" onclick="setDate()" value="Fill Follow Date" />
-            </p> -->
-            <p>Accès rapide</p>
-            <p onclick="isToday()">Aujourd'hui</p>
-            <p onclick="theDayBefore()">La veille</p>
-            <p onclick="sevenLastDays()">Les 7 derniers jours</p>
-            <p onclick="currWeek()">Cette semaine</p>
-            <p onclick="thirtyLastDays()">Les 30 derniers jours</p>
-            <p onclick="currMonth()">Ce mois</p>
-            <p onclick="currYear()">Cette année</p>
+<head>
+    <title>Teranga2</title>
+    <meta charset="utf-8">
+    <meta name="language" content="fr-FR" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="script.js" async></script>
 
+
+<body>
+    <section id="delivery_container">
+        <div class="div_container">
+            <p for="deliveryDate">Délivrance</p>
         </div>
+        <div class="div_container" onclick="showHide()">
+            <p>du</p>
+        </div>
+        <div class="div_container">
+            <p id="target"></p>
+        </div>
+        <div class="div_container">
+            <p>au</p>
+        </div>
+        <div class="div_container">
+            <p id="target2"></p>
+        </div>
+        <div class="div_container">
+            <p>, pendant</p>
+        </div>
+        <div class="div_container">
+            <p id="target3"></p>
+        </div>
+        <div class="div_container">
+            <p>jours </p>
+        </div>
+    </section>
 
-        
 
 
-    </body>
 
-<script>
+    <div id="calendar">
+        <input type="date" id="startDate" onchange="cal()">
+        -
+        <input type="date" id="endDate" onchange="cal()">
+        <label>Nombre de jours:</label>
+        <input type="number" id="numdays" onchange="setDate()" />
+        <p>Accès rapide</p>
+        <p onclick="isToday()">Aujourd'hui</p>
+        <p onclick="theDayBefore()">La veille</p>
+        <p onclick="sevenLastDays()">Les 7 derniers jours</p>
+        <p onclick="currWeek()">Cette semaine</p>
+        <p onclick="thirtyLastDays()">Les 30 derniers jours</p>
+        <p onclick="currMonth()">Ce mois</p>
+        <p onclick="currYear()">Cette année</p>
+    </div>
 
-</script>
+</body>
+
 </html>
