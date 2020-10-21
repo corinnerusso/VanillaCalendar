@@ -15,6 +15,9 @@
     <input type="text" id="deliveryDate" onclick="changeInput();">
     <div ><label >Nombre de jours:</label><input type="text" id="numdays" /></div> 
 -------------------------
+
+Set to today (JavaScript):
+<input id="today" type="date">
 </div>
 
 
@@ -67,7 +70,7 @@ function cal(){
         document.getElementById("numdays").value=getDays();
     }
 }
-
+document.querySelector("#today").valueAsDate = new Date();
 </script>
 
 <script>
