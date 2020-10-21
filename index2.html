@@ -19,17 +19,17 @@
             <input type="date" id="startDate" onchange="cal()">
             -
             <input type="date" id="endDate" onchange="cal()">
-            <p>
+            <!-- <p>
                 <input type="button" onclick="setDate()" value="Fill Follow Date" />
-            </p>
+            </p> -->
             <p>Accès rapide</p>
-
+            <p onclick="isToday()">Aujourd'hui</p>
             <p onclick="theDayBefore()">La veille</p>
             <p onclick="sevenLastDays()">Les 7 derniers jours</p>
-            <p onclick="thisWeek()">Cette semaine</p>
+            <p onclick="currWeek()">Cette semaine</p>
             <p onclick="thirtyLastDays()">Les 30 derniers jours</p>
-            <p onclick="thisMonth()">Ce mois</p>
-            <p onclick="currYear2()">Cette année</p>
+            <p onclick="currMonth()">Ce mois</p>
+            <p onclick="currYear()">Cette année</p>
 
         </div>
 
