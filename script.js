@@ -1,15 +1,3 @@
- //Delivery sentence
-let initDate=new Date(document.getElementById("startDate").value);
-let fromDate = initDate.toLocaleDateString();
-document.getElementById("target").textContent=fromDate;
-
-let endingDate= new Date(document.getElementById("endDate").value);
-let untilDate = endingDate.toLocaleDateString();
-document.getElementById("target2").textContent= untilDate;
-
-document.getElementById("target3").textContent=document.getElementById("numdays").value;
-
- 
  //Today declaration
  let today = new Date().toISOString().substr(0, 10);
  document.querySelector("#startDate").value = today;
@@ -23,21 +11,6 @@ function showHide() {
        x.style.display = 'block';
    } else {
        x.style.display = 'none';
-   }
-}
-
-
-//Calculate num of days between 2 dates
-function getDays(){
-   let first_date = new Date(document.getElementById("startDate").value);
-   let last_day = new Date(document.getElementById("endDate").value);
-return parseInt((last_day-first_date)/(24*3600*1000));
-}
-
-function cal(){
-    
-   if(document.getElementById("endDate")){
-       document.getElementById("numdays").value=getDays();
    }
 }
 
@@ -95,6 +68,8 @@ function sevenLastDays(){
  
     document.getElementById("startDate").value=convertDate;
     document.getElementById("endDate").value=convertDate2;
+
+    document.getElementById("numdays").value="7";
     }
 
 // this week
@@ -112,6 +87,8 @@ function currWeek(){
     let dateObject2 = new Date(last_day);
     let convertDate2=dateObject2.toISOString().substr(0,10);
     document.getElementById("endDate").value=convertDate2;
+
+    document.getElementById("numdays").value="7";
     }
 
     // 30 last days
@@ -128,6 +105,8 @@ function thirtyLastDays(){
 
     document.getElementById("startDate").value=convertDate;
     document.getElementById("endDate").value=convertDate2;
+
+    document.getElementById("numdays").value="30";
     }
 
 
@@ -148,6 +127,7 @@ function currMonth(){
     let dateObject2 = new Date(LastDay);
     let convertDate2=dateObject2.toISOString().substr(0,10);
     document.getElementById("endDate").value=convertDate2;
+    document.getElementById("numdays").value="30";
     }
 
 // this year
@@ -165,6 +145,46 @@ function currYear(){
     let dateObject2 = new Date(last_day_of_year);
     let convertDate2=dateObject2.toISOString().substr(0,10);
     document.getElementById("endDate").value=convertDate2;
+    document.getElementById("numdays").value="365";
     }
 
+
+    //Calculate num of days between 2 dates
+function getDays(){
+    let first_date = new Date(document.getElementById("startDate").value);
+    let last_day = new Date(document.getElementById("endDate").value);
+ return parseInt((last_day-first_date)/(24*3600*1000));
+ }
+ 
+ function cal(){
+     
+    if(document.getElementById("endDate")){
+        document.getElementById("numdays").value=getDays();
+    }
+ }
+ 
+ //Delivery sentence
+ let initDate=new Date(document.getElementById("startDate").value);
+ let fromDate = initDate.toLocaleDateString();
+ document.getElementById("target").textContent=fromDate;
+ 
+ let endingDate= new Date(document.getElementById("endDate").value);
+ let untilDate = endingDate.toLocaleDateString();
+ document.getElementById("target2").textContent= untilDate;
+ 
+ document.getElementById("target3").textContent=document.getElementById("numdays").value;
+ 
+ 
+ 
+//test
+function refresh() {
+    document.getElementById("target3").textContent=document.getElementById("numdays").value;
     
+    let initDate=new Date(document.getElementById("startDate").value);
+    let fromDate = initDate.toLocaleDateString();
+    document.getElementById("target").textContent=fromDate;
+ 
+    let endingDate= new Date(document.getElementById("endDate").value);
+    let untilDate = endingDate.toLocaleDateString();
+    document.getElementById("target2").textContent= untilDate;
+  }
