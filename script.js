@@ -17,14 +17,14 @@ document.getElementById("target3").textContent=document.getElementById("numdays"
  
 
  //Show or hide calendar modal
-// function showHide() {
-//    var x = document.getElementById('calendar');
-//    if (x.style.display === 'none') {
-//        x.style.display = 'block';
-//    } else {
-//        x.style.display = 'none';
-//    }
-// }
+function showHide() {
+   var x = document.getElementById('calendar');
+   if (x.style.display === 'none') {
+       x.style.display = 'block';
+   } else {
+       x.style.display = 'none';
+   }
+}
 
 
 //Calculate num of days between 2 dates
