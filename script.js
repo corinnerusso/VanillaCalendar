@@ -6,7 +6,7 @@
 
  //Show or hide calendar modal
 function showHide() {
-   var x = document.getElementById('calendar');
+   var x = document.getElementById('calendar_container');
    if (x.style.display === 'none') {
        x.style.display = 'block';
    } else {
@@ -176,7 +176,7 @@ function getDays(){
  
  
  
-//test
+//refresh sentence while changes occure
 function refresh() {
     document.getElementById("target3").textContent=document.getElementById("numdays").value;
     
@@ -188,3 +188,4 @@ function refresh() {
     let untilDate = endingDate.toLocaleDateString();
     document.getElementById("target2").textContent= untilDate;
   }
+

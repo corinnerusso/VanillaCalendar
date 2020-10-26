@@ -1,16 +1,16 @@
 html {
     background-color: rgb(246, 244, 244);
 }
-
-#calendar {
+#calendar_container {
     display: none;
-    display: flex;
-    flex-direction: row;
-    margin:3rem 0 0 5rem;
     border: 0.1rem solid grey;
     border-radius: 0.5rem;
-    width: 50%;
     background-color: white;
+    margin:0 0 0 5rem;
+}
+#calendar {
+    display: flex;
+    flex-direction: row;    
     padding: 1rem 0 1rem 0.5rem;
 }
 
@@ -38,3 +38,23 @@ html {
     padding-left:0.5rem;
     background-color: white;
 }
+
+#numdays{
+    width: 3rem;
+}
+
+#validation_button {
+    background-color: #4c7faf;
+    border: none;
+    color: white;
+    padding: 2px 7px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 0.2rem;
+  }
+
+  

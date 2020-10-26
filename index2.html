@@ -7,6 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <link rel="stylesheet" href="style.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
+    
+    
+    
     <script src="script.js" async></script>
 
 
@@ -42,7 +46,7 @@
 
 
 
-
+<div id="calendar_container">
     <div id="calendar">
         <div>
             <p>Accès rapide :</p>
@@ -58,12 +62,14 @@
         <input type="date" id="startDate" onchange="cal()">
         -
         <input type="date" id="endDate" onchange="cal()">
-        <label>Nombre de jours:</label>
+        <label>ou</label>
         <input type="number" id="numdays" value="1" onchange="setDate()" />
-        <button onclick="refresh()">ok</button>
-     
-    </div>
+        <button id="validation_button" onclick="refresh()">ok</button>
+      
+        
 
+    </div>
+</div>
 </div>
 
 </body>
