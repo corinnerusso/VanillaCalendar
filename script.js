@@ -7,11 +7,12 @@
  //Show or hide calendar modal
 function showHide() {
    let popup = document.getElementById('calendar_container');
-   if (popup.style.display === 'none') {
-       popup.style.display = 'block';
-   } else {
-       popup.style.display = 'none';
-   }
+    if (window.getComputedStyle(popup).display === "none") {
+        popup.style.display = "block";
+    } else {
+        popup.style.display="none";
+    }
+
 }
 
  
