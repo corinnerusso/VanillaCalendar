@@ -6,7 +6,7 @@
     <meta name="language" content="fr-FR" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <link rel="stylesheet" href="style.css" />
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
     <script src="script.js" async></script>
 
 
@@ -46,13 +46,13 @@
         <div id="calendar">
             <div>
                 <p>Accès rapide :</p>
-                <p class="quick_access_link" onclick="isToday()">Aujourd'hui</p>
-                <p class="quick_access_link" onclick="theDayBefore()">La veille</p>
-                <p class="quick_access_link" onclick="sevenLastDays()">Les 7 derniers jours</p>
-                <p class="quick_access_link" onclick="currWeek()">Cette semaine</p>
-                <p class="quick_access_link" onclick="thirtyLastDays()">Les 30 derniers jours</p>
-                <p class="quick_access_link" onclick="currMonth()">Ce mois</p>
-                <p class="quick_access_link" onclick="currYear()" >Cette année</p>
+                <p class="quick_access_link" id="today" >Aujourd'hui</p>
+                <p class="quick_access_link" id="yesterday" >La veille</p>
+                <p class="quick_access_link" id="last7days" >Les 7 derniers jours</p>
+                <p class="quick_access_link" id="thisweek" >Cette semaine</p>
+                <p class="quick_access_link" id="last30days">Les 30 derniers jours</p>
+                <p class="quick_access_link" id="thismonth">Ce mois</p>
+                <p class="quick_access_link" id="thisyear"  >Cette année</p>
             </div>
             <div>
                 <input type="date" id="startDate" onchange="cal()">
