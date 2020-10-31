@@ -1,8 +1,11 @@
  //Today declaration
  let today = new Date().toISOString().substr(0, 10);
- document.querySelector("#startDate").value = today;
- document.querySelector("#endDate").value = today;
+ document.getElementById("startDate").value = today;
+ document.getElementById("endDate").value = today;
  
+ //Initialize variables
+ let first_date=new Date(document.getElementById("startDate").value);
+ let last_date= new Date(document.getElementById("endDate").value);
 
  //Show or hide calendar modal
 function showHide() {
@@ -12,33 +15,60 @@ function showHide() {
     } else {
         popup.style.display="none";
     }
-
 }
 
  
- //Delivery sentence when compenent is downloaded
- let initDate=new Date(document.getElementById("startDate").value);
- let fromDate = initDate.toLocaleDateString();
- document.getElementById("target").textContent=fromDate;
+ //Initiate delivery sentence with today dates
+ let initDate=new Date(today).toLocaleDateString();
+ document.getElementById("target1").textContent=initDate;
  
- let endingDate= new Date(document.getElementById("endDate").value);
- let untilDate = endingDate.toLocaleDateString();
- document.getElementById("target2").textContent= untilDate;
  
- document.getElementById("target3").textContent=document.getElementById("numdays").value;
+ let endingDate= new Date(today).toLocaleDateString();
+ document.getElementById("target2").textContent= endingDate;
  
+//  document.getElementById("target3").textContent=document.getElementById("numdays").value;
+ 
+//set target1
+ let startInput=document.getElementById("startDate");
+ let target1 = document.getElementById("target1");
+ startInput.addEventListener('change', updateValue);
+ function updateValue(e) {
+   let setInitDate=  new Date(e.target.value);
+   let finalInitDate=setInitDate.toLocaleDateString();
+   target1.textContent=finalInitDate;
+ }
+
+//set target2
+ let endInput=document.getElementById("endDate");
+ let target2 = document.getElementById("target2");
+ endInput.addEventListener('change', updateValue2);
+ function updateValue2(e) {
+   let setEndingInput=  new Date(e.target.value);
+   let finalEndingDate=setEndingInput.toLocaleDateString();
+   target2.textContent=finalEndingDate;
+ }
+
+ //set target3
+
+ let newNumdays=document.getElementById("numdays");
+ let target3 = document.getElementById("target3");
+ newNumdays.addEventListener('change', updateValue3);
+ function updateValue3(e) {
+   target3.textContent=e.target.value;
+ }
+
  
  
 //refresh sentence while changes occure
 function refresh() {
     document.getElementById("target3").textContent=document.getElementById("numdays").value;
     
-    let initDate=new Date(document.getElementById("startDate").value);
-    let fromDate = initDate.toLocaleDateString();
-    document.getElementById("target").textContent=fromDate;
+    // let initDate=new Date(document.getElementById("startDate").value);
+    let fromDate = first_date.toLocaleDateString();
+    document.getElementById("target1").textContent=fromDate;
  
-    let endingDate= new Date(document.getElementById("endDate").value);
-    let untilDate = endingDate.toLocaleDateString();
+    // let endingDate= new Date(document.getElementById("endDate").value);
+    let untilDate = last_date.toLocaleDateString();
     document.getElementById("target2").textContent= untilDate;
   }
 
@@ -46,11 +76,12 @@ function refresh() {
 
 //Change dates if num of days is changed by user
 function setDate(){
-    let currDate = new Date(document.getElementById("startDate").value);
+    // let currDate = new Date(document.getElementById("startDate").value);
     let delay= (document.getElementById("numdays").value);
+    console.log(delay);
     let newdelay=parseInt((delay)/(24*3600*1000));
 
-    let myNewDate = new Date(currDate);
+    let myNewDate = new Date(first_date);
 
     let finalDate=myNewDate.setDate(myNewDate.getDate() + newdelay);
 
@@ -62,7 +93,7 @@ function setDate(){
 
     //Calculate num of days between 2 dates
     function getDays(){
-        let first_date = new Date(document.getElementById("startDate").value);
+        // let first_date = new Date(document.getElementById("startDate").value);
         let last_day = new Date(document.getElementById("endDate").value);
      return parseInt((last_day-first_date)/(24*3600*1000));
      }
@@ -170,11 +201,11 @@ function setDate(){
             }
         //this year 
               else {
-                let currDate = new Date(document.getElementById("endDate").value);
+                // let currDate = new Date(document.getElementById("endDate").value);
            
-                first_day_of_year = new Date(currDate.getFullYear(), 0); 
+                first_day_of_year = new Date(last_date.getFullYear(), 0); 
                 let firstDay=first_day_of_year.setDate(first_day_of_year.getDate()+1);
-                last_day_of_year = new Date(currDate.getFullYear(), 12)  
+                last_day_of_year = new Date(last_date.getFullYear(), 12)  
                     
                 let dateObject = new Date(firstDay);
                 let convertDate=dateObject.toISOString().substr(0,10);
@@ -186,3 +217,4 @@ function setDate(){
                 document.getElementById("numdays").value="365";
               }    
       });
+
